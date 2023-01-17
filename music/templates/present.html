@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    {% for artist in artists %}
+
+      {% if artist.profile_photo.url and artist.bio %}
+
+        <section class="about">
+          <h1>{{ artist.username }}<span> & Lamba</span></h1>
+          <div class="main">
+          
+            <div class="image">
+                <img src="{{ artist.profile_photo.url }}" alt="">
+            </div>
+          
+            <div class="about-text">
+              <p>
+                  Notre artiste de talent est un véritable phénomène de la scène musicale.
+                  Avec sa voix puissante et son style unique, il captive son public à chaque performance.
+                  Son amour de la musique transparaît à chaque note et il a le don de faire vibrer son public.
+                  Son énergie sur scène est contagieuse et vous laissera sans voix.
+                  Ne ratez pas l'opportunité de le voir en live, c'est un moment inoubliable !</p>
+            </div>
+            <div class="btn">
+              <button type="button"><a href="{% url 'artists' artist.id %}">Ecouter</a></button>
+            </div>
+          </div>
+        </section>
+        <div class="separator"></div>
+      {% endif %}
+
+    {% endfor %}   
+
+{% endblock content %}
+<!--table-->
+
+<div class="show-up small">
+  <table class="table_body">
+      <thead>
+          <tr>
+              <th>Titre</th>
+              <th>Ecouter</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for music in musics %}
+              {% if music.creator == artist %}
+          <tr>
+              <td>
+                  {{ music.title }}
+              </td>
+              <td>
+                  <a href={% url 'player' music.id %}><button type="button" class="btn btn-success">Ecouter</button></a>
+              </td>
+          </tr>
+              {% endif %}
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+<!--table-->
+
+
+<div class="scrolling">
+    {% for artist in artists %}
+        {% if artist.profile_photo.url and artist.bio %}    
+            <section class="about">
+                <div class="main">
+                        <img src="{{ artist.profile_photo.url }}" alt="">
+                    <div class="about-text">
+                        <h1>
+                            <span>{{ artist.username }}</span>
+                        </h1>
+                        <div class="show-up small">
+                            <table class="table_body">
+                                <thead>
+                                    <tr>
+                                        <th>Titre</th>
+                                        <th>Ecouter</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for music in musics %}
+                                        {% if music.creator == artist %}
+                                    <tr>
+                                        <td>
+                                            {{ music.title }}
+                                        </td>
+                                        <td><strong>
+                                            <a href={% url 'player' music.id %}><button type="button" class="btn btn-success"><strong>Ecouter</strong></button></a>
+                                        </td>
+                                    </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>
+                            {{ artist.bio }}</p>
+                        <button type="button">Ecouter</button>
+                    </div>
+                </div>
+            </section>
+            <div class="separator"></div>
+        {% endif %}
+    {% endfor %}
+    <i class="fas fa-arrow-down"></i>
+</div>

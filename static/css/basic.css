@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: none;
+}
+element.style{
+  background-color: none;
+}
+body{
+  background-color: black;
+  background: url("music.jpg");
+  height: 100%;
+  overflow: hidden;
+
+}
+.wrapper{
+  margin: 10px;
+}
+.wrapper .top_navbar{
+  width: calc(100% - 20px);
+  height: 60px;
+  display: flex;
+  position: fixed;
+  top: 10px;
+  z-index: 1;
+}
+
+.wrapper .top_navbar .hamburger{
+  width: 70px;
+  height: 100%;
+  background: brown;
+  padding: 15px 17px;
+  border-top-left-radius: 20px;
+  cursor: pointer;
+}
+
+.wrapper .top_navbar .hamburger div{
+  width: 35px;
+  height: 4px;
+  background: gold;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.wrapper .top_navbar .top_menu{
+  width: calc(100% - 70px);
+  height: 100%;
+  background: #0c192c;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.wrapper .top_navbar .top_menu .logo{
+  color: gold;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.wrapper .top_navbar .top_menu ul{
+  display: flex;
+}
+
+.wrapper .top_navbar .top_menu ul li a{
+  display: block;
+  margin: 0 10px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  color: gold;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover{
+  background: brown;
+  color: #fff;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover i{
+  color: gold;
+}
+
+.wrapper .sidebar{
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  background: #0c192c;
+  width: 200px;
+  height: calc(100% - 80px);
+  border-bottom-left-radius: 20px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 20px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    margin-bottom: 1px;
+    color: #92a6e2;
+    white-space: nowrap;
+}
+
+.wrapper .sidebar ul li a:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: brown;
+  display: none;
+}
+
+.wrapper .sidebar ul li a span.icon{
+  margin-right: 10px;
+  display: inline-block;
+  color: gold;
+}
+
+.wrapper .sidebar ul li a span.title{
+  display: inline-block;
+  color: gold;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+  background: #4360b5;
+  color: #fff;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+  display: block;
+}
+
+.wrapper .main_container{
+  width: (100% - 200px);
+  margin-top: 70px;
+  margin-left: 200px;
+  padding: 15px;
+  height: calc(100% - 80px);
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+
+.wrapper.collapse .sidebar{
+  width: 70px;
+  
+}
+
+.wrapper.collapse .sidebar ul li a{
+  text-align: center; 
+  
+}
+
+.wrapper.collapse .sidebar ul li a span.icon{
+  margin: 0;
+}
+
+.wrapper.collapse .sidebar ul li a span.title{
+  display: none;
+  
+}
+
+.wrapper.collapse .main_container{
+  width: (100% - 70px);
+  margin-left: 70px;
+}
+
+
+/* Scrolling styles start from here */
+.scrolling{
+  position: absolute;
+  width: 78%;
+  height: calc(100% - 90px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.scrolling.wide{
+  position: absolute;
+  width: 90%;
+  height:calc(100% - 90px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.scrolling::-webkit-scrollbar {
+  background: #191919;
+  /*background-color: #191919;*/
+  display: flex;
+  visibility: visible;
+  border-radius: 20px;
+}
+.scrolling::-webkit-scrollbar-thumb{
+  background-color: dimgray;
+  opacity: 1;
+  border-radius: 50px;
+}
+
+.scrolling::-webkit-scrollbar-thumb:hover{
+  background-color: gold;
+  border-radius: 50px;
+  transition: .4s;
+  visibility: visible;
+}
+
+.scrolling::-webkit-scrollbar:hover{
+  visibility: visible;
+}
+.image img{
+  height: auto;
+  width: 420px;
+}
+.about h1{
+  color: azure;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.about{
+  width: 100%;
+  padding: 78px 0px;
+  background-color: #191919;
+  position: relative;
+}
+
+.about img{
+  height: auto;
+  width: 420px;
+  position: relative;
+}
+
+.about-text{
+  width: 550px;
+  margin:  10px 20px;
+  padding: 0 50px;
+}
+.main{
+  width: 1130px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-text h1{
+  position: relative;
+  color: white;
+  font-size: 80px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.about-text h5{
+  position: relative;
+  margin-left: 0 20px;
+  color: white;
+  font-size: 25px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+span{
+  color: #f9004d;
+}
+.about-text p{
+  margin-left: 20px;
+  color: #fcfd;
+  letter-spacing: 1px;
+  line-height: 28px;
+  font-size: 18px;
+  margin-bottom: 45px;
+  position: relative;
+}
+button{
+  background: #f9004d;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 13px 30px;
+  border-radius: 30px;
+  transition: .4s;
+}
+.btn button a{
+  color: #fff;
+}
+.btn button{
+  background: #f9004d;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 13px 30px;
+  border-radius: 30px;
+  transition: .4s;
+}
+
+button:hover{
+  background: transparent;
+  border: 2px solid #f9004d;
+  cursor: pointer;
+}
+.separator {
+  height: 1px;
+  width: 50%;
+  background-color: gold;
+  margin: 0 25%;
+  border-radius: 2px;  
+}
+
+.fa-arrow-down {
+  color: white;
+  font-size: 48px;
+  position: fixed;
+  bottom: 50px;
+  right: 200px;
+}
+
+
+
+
+@media screen and (max-width: 990px){
+  .about h1{
+    display: block;
+    top: 12px;
+    text-align: center;
+    
+  }
+  .scrolling{
+    background-position: center;
+    width: calc(100% - 230px);
+  }
+  .main{
+    display: flexbox;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  .about{
+    align-items: center;
+    justify-content: center;
+  }
+  .about-text{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-text p{
+    margin-left: 0 20px;
+    color: #fcfd;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 15px;
+    margin-bottom: 45px;
+    position: relative;
+  }
+  .image img{
+    height: auto;
+    width: 350px;
+  }
+}
+
+/* Copy from here*/
+.user_info{
+  opacity: 0;
+  height: auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 250px;
+  position: fixed;
+  right: 10px;
+  top : 75px;
+  background-color: #0c192c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 2px 2px #f9004d;
+}
+.view{
+  opacity: 1;
+}
+.user_info .title{
+  color: gold;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+  position: relative;
+  padding: 20px;
+  background-position: center;
+}
+.user_info a{
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  margin-bottom: 1px;
+  color: none;
+  white-space: nowrap;
+}
+.user_info .icon{
+  color: gold;
+}
+.user_info a:hover,
+.user_info .title:hover,
+.user_info .icon:hover
+{
+  color: none;
+  text-decoration: none;
+}
+.user_info a:hover{
+  background: brown;
+  border-radius: 20px;
+}
+.user_info img{
+  top: 10px;
+  height : 150px;
+  position : relative;
+  align-self: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* to here */

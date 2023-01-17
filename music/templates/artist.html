@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<section class="about">
+    <h1>{{ artist.username }}<span> & Lamba</span></h1>
+    <div class="main">
+    
+      <div class="image">
+          <img src="{{ artist.profile_photo.url }}" alt="">
+      </div>
+    
+      <div class="about-text">
+        <div class="show-up small">
+            <table class="table_body">
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Ecouter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for music in musics %}
+                    <tr>
+                        <td>
+                            {{ music.title }}
+                        </td>
+                        <td>
+                            <a href={% url 'player' music.id %}><button type="button" class="btn btn-success">Ecouter</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>
+
+    </div><center>
+    <div class="btn">
+        <button type="button"><a href="{% url 'home' %}">En Découvrir </a></button>
+    </div></center>
+
+
+  </section>
+
+
+{% endblock content %}

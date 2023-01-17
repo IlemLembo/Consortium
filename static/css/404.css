@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background-color: black;
+  background: url("music.jpg");
+  height: 100%;
+  overflow: hidden;
+}
+
+.main{
+  margin: 5% 10% 0;
+  padding: 10px;
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff6;
+  border-radius: 5rem;
+  background-position: center;
+}
+.main h1{
+  font-size: 150px;
+  text-align: center;
+  position: relative;
+}
+
+.inside{
+  height: 80%;
+  margin: 10%;
+  background-color: antiquewhite;
+  border-radius: 10rem;
+  padding: 5%;
+}
+.inside span{
+  color: red;
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+}
+.inside i{
+  color: brown;
+}
+
+.button{
+  margin-top: 50px;
+  padding: 0 100px;
+  width: 30px;
+  text-decoration: none;
+}
+.button button{
+  width: 100px;
+  background-color: #191919;
+  border-radius: 25px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: blanchedalmond;
+}
+a{
+  color: inherit;
+}
+
+.button button:hover{
+  cursor: pointer;
+  width: 120px;
+  background-color: #19191999;
+  border-radius: 25px;
+  height: 60px;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  color: blanchedalmond;
+  text-align: center;
+  transition: 0.4s;
+}
