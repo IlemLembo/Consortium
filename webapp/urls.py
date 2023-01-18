@@ -19,7 +19,9 @@ from authentication.views import LoginPageView, portal, LogoutPageView , SignupP
 import music.views as musicviews
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import handler404, handler500, handler403, handler400
+from django.conf.urls import handler404
+
+handler404 = "authentication.views.handle_404"
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
@@ -31,7 +33,6 @@ urlpatterns = [
     path('news', musicviews.news, name='news'),
     path('about', about, name='about'),
     path('update_profile', musicviews.update_profile, name='update_profile'),
-    path('vogue', musicviews.present, name='vogue'),
     path('player/<str:pk>', musicviews.lecture, name='player'),
     path('artists/<str:pk>', musicviews.artists, name='artists'),
     #path("payment/<str:pk>", musicviews.payment),
@@ -42,15 +43,10 @@ urlpatterns = [
     path('success_signup_email', musicviews.success_signup, name='success_signup_email'),
     path('suggestion', musicviews.Suggestion, name='suggest'),
 
-]
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
-if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+'''+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))'''
 
-    '''+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))'''
-
-    """ + static(settings.ADMIN_MEDIA_PREFIX, document_root=settings.ADMIN_STATIC_ROOT)"""
+""" + static(settings.ADMIN_MEDIA_PREFIX, document_root=settings.ADMIN_STATIC_ROOT)"""
 
 
-handler404 = "authentication.views.handle_404"
-handler500 = "authentication.views.handle_404" 
